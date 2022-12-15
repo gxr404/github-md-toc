@@ -8,3 +8,7 @@
 
 - 支持 wiki
 - 支持展开收起
+
+## Install
+
+- [chrome Store](https://chrome.google.com/webstore/detail/github-markdown-toc/pfhlmojplmconbbfhhbacdeeblepmilm/related)
