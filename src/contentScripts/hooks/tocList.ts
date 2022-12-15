@@ -27,11 +27,10 @@ export function useTocList() {
     const tocListData = parse()
     setTocList(tocListData)
     onMessage('tab-url-change', () => {
-      setTocList([])
       setTimeout(() => {
         const tocListData = parse()
         setTocList(tocListData)
-      }, 500)
+      }, 100)
     })
   }
 

@@ -6,6 +6,7 @@ import { useLateralMove } from '../hooks/lateralMove'
 
 const [showSideBar] = useToggle(false)
 const { tocList } = useTocList()
+const existTocList = ref(false)
 
 const moveBar = ref()
 const moveBarWarp = ref()
@@ -15,6 +16,7 @@ const sidebarPosition = ref({
 })
 
 watch(tocList, (list) => {
+  existTocList.value = list.length > 0
   if (list.length === 0) {
     showSideBar.value = false
   }
@@ -78,7 +80,7 @@ onMounted(() => {
     <div ref="moveBar" class="cursor-col-resize h100% absolute right-0 w1px bg-blueGray-2 z-90" />
   </div>
   <div
-    v-if="!showSideBar"
+    v-if="!showSideBar && existTocList"
     class="fixed bg-#2da44e color-white left-0 top-50% z-1000000001 p-5px pt-8px pb-8px border-rounded-rt-6px border-rounded-rb-6px drop-shadow cursor-pointer"
     @click="showSideBar = true"
   >
