@@ -4,7 +4,7 @@ export interface TocItem {
   href: string
 }
 
-const PARSE_TAG = ['h1', 'h2', 'h3'] // , 'h4'
+const PARSE_TAG = ['h1', 'h2', 'h3', 'h4']
 
 export const parseHtmlToToc = (elSelector: string): TocItem[] => {
   const container = document.querySelector(elSelector)

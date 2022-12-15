@@ -1,9 +1,9 @@
 {
   "name": "github-md-toc",
-  "displayName": "github markdown toc",
-  "version": "0.0.2",
+  "displayName": "github-md-toc",
+  "version": "0.0.3",
   "private": true,
-  "description": "github markdown toc",
+  "description": "generate github markdown toc",
   "scripts": {
     "dev": "npm run clear && cross-env NODE_ENV=development run-p dev:*",
     "dev:prepare": "esno scripts/prepare.ts",
