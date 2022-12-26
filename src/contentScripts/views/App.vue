@@ -55,7 +55,7 @@ onMounted(() => {
     </div>
     <ul
       ref="moveBarWarp"
-      class="toc-padding toc-color-#0969da toc-w-266px toc-transition-all toc-list-none toc-p-16px toc-h100% toc-overflow-y-auto scrollbar scrollbar-rounded scrollbar-w-4px scrollbar-radius-2 scrollbar-track-radius-4 scrollbar-thumb-radius-4"
+      class="toc-padding toc-color-#0969da toc-w-266px toc-transition-all toc-list-none toc-p-16px toc-h100% toc-overflow-y-auto toc-scrollbar toc-scrollbar-rounded scrollbar-w-4px scrollbar-radius-2 scrollbar-track-radius-4 scrollbar-thumb-radius-4"
     >
       <!-- 'pl font-700': item.tag === 'h1', -->
       <li class="toc-sticky -toc-top-16px toc-text-center toc-text-size-16px toc-font-700 -toc-ml-16px -toc-mr-16px -toc-mt-16px toc-h-60px toc-lh-60px toc-color-white toc-bg-#24292f">
