@@ -42,51 +42,51 @@ onMounted(() => {
 
 <template>
   <div
-    class="fixed flex bottom-0 top-0 m0 bg-white z-1000000001 transition-all" :class="{
-      'left--100%': !showSideBar,
-      'left-0': showSideBar,
+    class="toc-fixed toc-flex toc-bottom-0 toc-top-0 m0 toc-bg-white toc-z-1000000001 toc-transition-all" :class="{
+      'toc-left--100%': !showSideBar,
+      'toc-left-0': showSideBar,
     }"
   >
     <div
-      class="absolute right-20px top-30px w-20px text-size-30px lh-0 z-10 color-white cursor-pointer"
+      class="toc-absolute toc-right-20px toc-top-30px toc-w-20px toc-text-size-30px toc-lh-0 toc-z-10 toc-color-white toc-cursor-pointer"
       @click="showSideBar = false"
     >
       ×
     </div>
     <ul
       ref="moveBarWarp"
-      class="padding color-#0969da w-266px transition-all list-none p-16px h100% overflow-y-auto scrollbar scrollbar-rounded scrollbar-w-4px scrollbar-radius-2 scrollbar-track-radius-4 scrollbar-thumb-radius-4"
+      class="toc-padding toc-color-#0969da toc-w-266px toc-transition-all toc-list-none toc-p-16px toc-h100% toc-overflow-y-auto scrollbar scrollbar-rounded scrollbar-w-4px scrollbar-radius-2 scrollbar-track-radius-4 scrollbar-thumb-radius-4"
     >
       <!-- 'pl font-700': item.tag === 'h1', -->
-      <li class="sticky -top-16px text-center text-size-16px font-700 -ml-16px -mr-16px -mt-16px h-60px lh-60px color-white bg-#24292f">
+      <li class="toc-sticky -toc-top-16px toc-text-center toc-text-size-16px toc-font-700 -toc-ml-16px -toc-mr-16px -toc-mt-16px toc-h-60px toc-lh-60px toc-color-white toc-bg-#24292f">
         TOC
       </li>
-      <li class="pt-2 pd-2 font-700 ">
+      <li class="toc-pt-2 toc-pd-2 toc-font-700 ">
         <a href="#">▲ GO TOP</a>
       </li>
       <li
         v-for="item in tocList"
         :key="item.href"
-        class="pt-2 pd-2 truncate" :class="{
-          'font-700': item.tag === 'h1',
-          'pl-2 text-size-12px': item.tag === 'h2',
-          'pl-4 text-size-12px': item.tag === 'h3',
-          'pl-6 text-size-12px': item.tag === 'h4',
+        class="toc-pt-2 toc-pd-2 toc-truncate" :class="{
+          'toc-font-700': item.tag === 'h1',
+          'toc-pl-2 toc-text-size-12px': item.tag === 'h2',
+          'toc-pl-4 toc-text-size-12px': item.tag === 'h3',
+          'toc-pl-6 toc-text-size-12px': item.tag === 'h4',
         }"
       >
         <a :href="item.href" :title="item.text">{{ item.text }}</a>
       </li>
     </ul>
-    <div ref="moveBar" class="cursor-col-resize h100% absolute right-0 w1px bg-blueGray-2 z-90" />
+    <div ref="moveBar" class="toc-cursor-col-resize toc-h100% toc-absolute toc-right-0 toc-w1px toc-bg-blueGray-2 toc-z-90" />
   </div>
   <div
     v-if="!showSideBar && existTocList"
-    class="fixed bg-#2da44e color-white left-0 top-50% z-1000000001 p-5px pt-8px pb-8px border-rounded-rt-6px border-rounded-rb-6px drop-shadow cursor-pointer"
+    class="toc-fixed toc-bg-#2da44e toc-color-white toc-left-0 toc-top-50% toc-z-1000000001 toc-p-5px toc-pt-8px toc-pb-8px toc-border-rounded-rt-6px toc-border-rounded-rb-6px toc-drop-shadow toc-cursor-pointer"
     @click="showSideBar = true"
   >
-    <div class="text-size-16px text-center ">
+    <div class="toc-text-size-16px toc-text-center ">
       ➜
     </div>
-    <span class="write-vertical-right text-size-12px font-mono">OPEN-TOC</span>
+    <span class="toc-write-vertical-right toc-text-size-12px toc-font-mono">OPEN-TOC</span>
   </div>
 </template>
