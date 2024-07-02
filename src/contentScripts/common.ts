@@ -16,7 +16,7 @@ export const parseHtmlToToc = (elSelector: string): TocItem[] => {
     return {
       tag: el.tagName.toLocaleLowerCase(),
       text: el.textContent || '',
-      href: el.querySelector('a')?.getAttribute('href') || '',
+      href: el.parentNode?.querySelector('a')?.getAttribute('href') || '',
     }
   })
 }
