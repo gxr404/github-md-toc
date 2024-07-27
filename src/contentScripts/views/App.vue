@@ -38,6 +38,21 @@ onMounted(() => {
     })
   }
 })
+
+function scrollClick(e: MouseEvent) {
+  const target = e.target as HTMLElement
+  const href = target.getAttribute('href')
+  if (href?.startsWith('#')) {
+    e.preventDefault()
+    window.location.hash = href.slice(1)
+    const id = `user-content-${href.slice(1)}`
+    const scrollEl = document.getElementById(id)
+    if (scrollEl) {
+      scrollEl.scrollIntoView()
+      document.documentElement.scrollTop = document.documentElement.scrollTop - 50
+    }
+  }
+}
 </script>
 
 <template>
@@ -74,7 +89,7 @@ onMounted(() => {
           'toc-pl-6 toc-text-size-12px': item.tag === 'h4',
         }"
       >
-        <a :href="item.href" :title="item.text">{{ item.text }}</a>
+        <a :href="item.href" :title="item.text" @click="scrollClick">{{ item.text }}</a>
       </li>
     </ul>
     <div ref="moveBar" class="toc-cursor-col-resize toc-h100% toc-absolute toc-right-0 toc-w1px toc-bg-blueGray-2 toc-z-90" />
